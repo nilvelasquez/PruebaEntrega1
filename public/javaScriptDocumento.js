@@ -13,17 +13,18 @@ function logear(){
     $.ajax({
         contentType: "application/json",
         type: 'POST',
-        url: URL+'/dsaApp/game/login',
+        url: '/dsaApp/game/login',
         data: JSON.stringify({ "correo": correo, "contrasena": contrasena }),
         dataType: 'json',
         success: function(result){
             localStorage.setItem("usuarioactivo", correo);
+            alert("Login correcto.")
         },
         error: function(error){
             if (usuario == "" || contrasena == "")
-                alert("You left something blank. Please try again!");
+                alert("Te has dejado algo en blaco, compruebalo de nuevo!");
             else{
-                alert("Wrong username or password. Please try again!");
+                alert("Correo o contraseña incorrecta, prueba de nuevo!");
             }
         }
     });
@@ -38,7 +39,7 @@ function registrar() {
         $.ajax({
             contentType: "application/json",
             type: 'POST',
-            url: URL + '/dsaApp/user/registrarUsuario',
+            url: '/dsaApp/game/registrarUsuario',
             data: JSON.stringify({"Usuario": username, "Email":email, "Contrasena": password}),
             dataType: 'json',
             success: function (result) {
@@ -49,7 +50,7 @@ function registrar() {
                 if (email == null || username == null || password == null)
                     alert("Has dejado algo en blanco, miralo de nuevo!");
                 else
-                    alert("Usuario o contraseña ya estan siendo usados, prueba de nuevo!");
+                    alert("Usuario o contraseña ya estan siendo usados, prueba de nuevo!"+username+email+password+password2);
             }
         });
     }

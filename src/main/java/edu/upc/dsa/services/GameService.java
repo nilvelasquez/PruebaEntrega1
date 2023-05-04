@@ -1,7 +1,7 @@
 package edu.upc.dsa.services;
 
 
-import edu.upc.dsa.GameManager;
+import  edu.upc.dsa.GameManager;
 import edu.upc.dsa.GameManagerImpl;
 import edu.upc.dsa.models.Objeto;
 import edu.upc.dsa.models.Usuario;
