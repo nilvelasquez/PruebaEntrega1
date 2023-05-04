@@ -40,7 +40,7 @@ function registrar() {
             contentType: "application/json",
             type: 'POST',
             url: '/dsaApp/game/registrarUsuario',
-            data: JSON.stringify({"Usuario": username, "Email":email, "Contrasena": password}),
+            data: JSON.stringify({"nombre": username, "correo":email, "password": password}),
             dataType: 'json',
             success: function (result) {
                 window.location.href = "Login.html";
@@ -50,7 +50,7 @@ function registrar() {
                 if (email == null || username == null || password == null)
                     alert("Has dejado algo en blanco, miralo de nuevo!");
                 else
-                    alert("Usuario o contraseña ya estan siendo usados, prueba de nuevo!"+username+email+password+password2);
+                    alert("Usuario o contraseña ya estan siendo usados, prueba de nuevo!");
             }
         });
     }
